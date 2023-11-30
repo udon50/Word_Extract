@@ -27,7 +27,11 @@ files.forEach((file) => {
 });
 
 const duplicateWords = getDuplicateWords(totalWordCounts);
-console.log(duplicateWords);
+
 
 /* fsモジュールとpathモジュールを使って、指定したディレクトリ内のテキストファイルの単語の出現回数を数えて、
 全てのファイルの単語の出現回数を合計して、重複した単語を抽出してconsole.logで出力する。 */
+
+fs.writeFileSync('./results/output.txt', duplicateWords.join('\r\n'), 'utf-8');
+
+console.log(duplicateWords);
